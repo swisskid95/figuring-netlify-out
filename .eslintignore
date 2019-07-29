@@ -1,0 +1,6 @@
+dist
+webpack.config.dev.js
+webpack.config.prod.js
+webpack.config.base.js
+node_modules
+**/spec.js
