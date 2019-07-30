@@ -1,5 +1,7 @@
 # Author's Haven - A Social platform for the creative at heart.
 
+[![Build Status](https://travis-ci.org/andela/persephone-ah-frontend.svg?branch=develop)](https://travis-ci.org/andela/persephone-ah-frontend)
+
 # Getting started
 
 This project contains frontend implementation for the Author's Haven project. If you are interested in checking out the backend, please do follow this link:
