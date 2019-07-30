@@ -1,6 +1,7 @@
 # Author's Haven - A Social platform for the creative at heart.
 
 [![Build Status](https://travis-ci.org/andela/persephone-ah-frontend.svg?branch=develop)](https://travis-ci.org/andela/persephone-ah-frontend)
+[![Coverage Status](https://coveralls.io/repos/github/andela/persephone-ah-frontend/badge.svg?branch=develop)](https://coveralls.io/github/andela/persephone-ah-frontend?branch=develop)
 
 # Getting started
 
