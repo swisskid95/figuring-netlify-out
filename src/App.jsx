@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import LandingPage from './views/LandingPage';
-import LoginPage from './views/LoginPage';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import LandingPage from './views/LandingPage/index.jsx';
+import LoginPage from './views/LoginPage/index.jsx';
 import { Provider } from 'react-redux';
-import setupStore from '../src/store';
+import setupStore from './store';
 import './styles/main.scss';
 
 const store = setupStore();
@@ -21,10 +21,10 @@ class App extends Component {
               <Link to={'/login'}>Login Page</Link>
             </li>
           </ul>
-          <switch>
+          <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/login" component={LoginPage} />
-          </switch>
+          </Switch>
         </Router>
       </Provider>
     );

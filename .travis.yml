@@ -6,7 +6,7 @@ addons:
     packages:
       - libgconf-2-4
 install:
-  - npm install cypress
+  - npm install
 cache:
   # cache both npm modules and Cypress binary
   directories:
@@ -17,4 +17,4 @@ cache:
     - npm run cy:verify
 script:
   - npm run test:coverage
-  - $(npm bin)/cypress run 
+  - $(npm bin)/cypress run
