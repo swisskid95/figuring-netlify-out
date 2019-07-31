@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import LandingPage from './views/LandingPage/LandingPage';
-import LoginPage from './views/LoginPage/LoginPage';
+import LandingPage from './views/LandingPage';
+import LoginPage from './views/LoginPage';
 import { Provider } from 'react-redux';
 import setupStore from '../src/store';
 import './styles/main.scss';
