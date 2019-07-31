@@ -7,10 +7,17 @@
     "dev": "webpack-dev-server --config webpack.config.dev.js --open --hot ",
     "build": "webpack --config webpack.config.prod.js",
     "start": "node server.js",
-    "test": "",
+    "test": "jest",
+    "test:watch": "jest --watchAll --coverage",
+    "cypress:open": "cypress open",
     "format": "pretty-quick",
     "lint": "eslint ./",
-    "coveralls": "npm run test -- --coverageReporters=text-lcov | coveralls"
+    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format --staged && npm run lint"
+    }
   },
   "repository": {
     "type": "git",
@@ -53,17 +60,23 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
+    "cypress": "^3.4.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.1.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.2",
-    "redux-immutable-state-invariant": "^2.1.0",
+    "jest": "^24.8.0",
     "node-sass": "^4.12.0",
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "react-hot-loader": "^4.12.10",
+    "react-test-renderer": "^16.8.6",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.1.0",
     "webpack-merge": "^4.2.1"
   },
