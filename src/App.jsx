@@ -3,6 +3,7 @@ import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import LandingPage from './views/LandingPage/index.jsx';
 import LoginPage from './views/LoginPage/index.jsx';
+import ArticlePage from './views/ArticlePage/index.jsx';
 import { Provider } from 'react-redux';
 import setupStore from './store';
 import './styles/main.scss';
@@ -24,6 +25,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/login" component={LoginPage} />
+            <Route path="/article" component={ArticlePage} />
           </Switch>
         </Router>
       </Provider>
