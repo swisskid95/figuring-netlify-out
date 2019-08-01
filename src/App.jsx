@@ -9,6 +9,7 @@ import setupStore from './store';
 import './styles/main.scss';
 import Header from './components/Header/index.jsx';
 
+
 const store = setupStore();
 
 class App extends Component {

@@ -1,6 +1,8 @@
-.cardDetails {
-  background-color: pink;
-  width: 100px;
+@import '../partials/variables.scss';
+h1, h2, h3, h4, h5 {
+  font-family: $primary-font;
+  font-style: normal;
+  font-weight: normal;
 }
 
 body {
