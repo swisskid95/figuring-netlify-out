@@ -10,6 +10,7 @@ import './index.scss';
  *      className={'icon-large'}
  *  />
  */
+
 const IconComponent = ({ className, src, alt }) => {
   return <img className={className} src={src} alt={alt} />;
 };
