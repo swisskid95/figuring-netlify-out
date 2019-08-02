@@ -12,6 +12,8 @@ import { Button, Form, Col } from 'react-bootstrap';
 import Modal from './components/Modal/index.jsx';
 
 import Footer from './components/Footer/index.jsx';
+import ProfileNavBar from './components/ProfileNavbar/index.jsx';
+import '../src/assets/images/img.jpg';
 
 const store = setupStore();
 // get app theme
@@ -19,7 +21,10 @@ const app_theme = localStorage.getItem('app_theme');
 class App extends Component {
   state = {
     show: false,
-    lightTheme: true
+    lightTheme: false,
+    authorName: 'Halimah Oladosu',
+    username: '@halimah',
+    authorImage: '../src/assets/images/img.jpg'
   };
 
   handleClose = () => this.setState({ show: false });
@@ -30,6 +35,12 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <Header />
+          <ProfileNavBar
+            lightTheme={this.state.lightTheme}
+            authorName={this.state.authorName}
+            username={this.state.username}
+            authorImage={this.state.authorImage}
+          />
           <Switch>
             <Route path="/" exact component={LandingPage} />
             <Route path="/login" component={LoginPage} />
