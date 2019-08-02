@@ -19,7 +19,7 @@ const articleCard = props => {
       <img className="card-img-top" src={props.articleImage} alt="article" />
       <div className={cardBodyClass.join(' ')}>
         <h5 className="card-title">{props.articleTitle}</h5>
-        <p className="card-text flex">
+        <div className="card-text flex">
           <div className="avatar">
             <img
               src={props.authorImage}
@@ -27,18 +27,18 @@ const articleCard = props => {
               alt="author"
             />
 
-            <p>
+            <span>
               {props.author}
               <br />
               <small>{props.email}</small>
-            </p>
+            </span>
           </div>
 
           <div className="flex mins-read">
             <small>{props.readTime} read</small>
             <small>ade</small>
           </div>
-        </p>
+        </div>
       </div>
     </div>
   );
