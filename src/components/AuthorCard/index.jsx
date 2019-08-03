@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import PropTypes from 'proptypes';
+import PropTypes from 'prop-types';
 import IconComponent from '../IconComponent/index.jsx';
 
 const AuthorCard = props => {
