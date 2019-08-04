@@ -15,7 +15,7 @@ const IconComponent = ({ className, src, alt }) => {
 };
 
 IconComponent.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired
 };
