@@ -1,0 +1,20 @@
+.nav-shadow {
+  background: #ffffff;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.04);
+}
+
+.navbar {
+  padding: 0.8rem 1rem;
+}
+.navbar-logo a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  color: #222222;
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+button {
+  line-height: 22px;
+}
