@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+@mixin RobotoFontProperties($size, $weight) {
+  font: {
+    family: Roboto;
+    style: normal;
+    weight: $weight;
+    size: $size;
+  }
+}
+
+.author-image {
+  height: 50px;
+  width: 50px;
+}
+
+.author-name {
+  @include RobotoFontProperties(17px, 500);
+}
+.author-card-dark {
+  position: absolute;
+  width: 307px;
+  height: 330px;
+  left: 71vw;
+  top: 5vh;
+  background: rgba(22, 22, 22, 0.89);
+  box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+
+  .small-text {
+    @include RobotoFontProperties(14px, normal);
+    line-height: 14px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .author-bio {
+    position: absolute;
+    height: 20px;
+    top: 15vh;
+    width: 82%;
+    left: 8%;
+  }
+  .follow-author {
+    position: absolute;
+    width: 218.84px;
+    height: 47px;
+    left: 14%;
+    top: 27vh;
+    background: #219653;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    .follow-text {
+      font: {
+        family: Poppins;
+        style: normal;
+        weight: 500;
+        size: 16px;
+      }
+      line-height: 24px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  }
+  .isFollowing {
+    background: transparent;
+    border: 2px solid #219653;
+    color: #219653;
+  }
+
+  .isNotFollowing {
+    color: white !important;
+  }
+}
+
+.author-card-light {
+  @extend .author-card-dark;
+  background: white;
+  .author-bio {
+    color: black;
+  }
+  .small-text {
+    color: black;
+  }
+}
