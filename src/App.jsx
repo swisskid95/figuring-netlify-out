@@ -9,9 +9,11 @@ import setupStore from './store';
 import './styles/main.scss';
 import Header from './components/Header/index.jsx';
 
+import Footer from './components/Footer/index.jsx';
 
 const store = setupStore();
-
+// get app theme
+const app_theme = localStorage.getItem('app_theme');
 class App extends Component {
   render() {
     return (
@@ -23,6 +25,7 @@ class App extends Component {
             <Route path="/login" component={LoginPage} />
             <Route path="/article" component={ArticlePage} />
           </Switch>
+          <Footer app_theme={app_theme} />
         </Router>
       </Provider>
     );
