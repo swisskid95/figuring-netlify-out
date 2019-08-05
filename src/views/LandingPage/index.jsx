@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { themeToggler } from './index.action';
 import Toggle from '../../components/Toggle/index.jsx';
 import './LandingPage.scss';
+import ArticleCard from '../../components/ArticleCard/index.jsx';
 
 export class LandingPage extends React.Component {
   constructor() {
@@ -36,6 +37,15 @@ export class LandingPage extends React.Component {
     localStorage.setItem('app_theme', this.state.theme);
   }
   render() {
+    const articleDetails = {
+      articleImage: '../../src/assets/images/profileImage.jpg',
+      light: true,
+      articleTitle: 'Understanding React and redux',
+      authorImage: '../../src/assets/images/react.png',
+      author: 'Damilola Adekoya',
+      email: 'damilola.adekoya@andela.com',
+      readTime: '6 mins'
+    };
     const { toggle } = this.state;
     const { theme } = this.props.theme;
     return (
@@ -46,6 +56,7 @@ export class LandingPage extends React.Component {
         </div>
         <h1>This is a demo Landing page</h1>
         <Toggle classToggle={toggle} handleClick={this.handleClick} />
+        <ArticleCard {...articleDetails} />
       </div>
     );
   }
