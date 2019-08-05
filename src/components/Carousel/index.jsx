@@ -5,13 +5,13 @@ import paginator from '../../utils/paginator';
 import './style.scss';
 import Carousel from 'react-bootstrap/Carousel';
 
-const CarouselSections = ({ sectionItems }) => {
+const CarouselSections = ({ sectionItems, theme }) => {
   return sectionItems.map((articleDetails, id) => {
-    return <ArticleCard key={id} {...articleDetails} />;
+    return <ArticleCard key={id} theme={theme} {...articleDetails} />;
   });
 };
 
-class CarouselContainer extends Component {
+export class CarouselContainer extends Component {
   state = {
     index: 0,
     direction: null,
@@ -53,7 +53,7 @@ class CarouselContainer extends Component {
   }
 
   render() {
-    const { articles, category } = this.props;
+    const { articles, category, theme } = this.props;
     const { articlesCardPerCarousel, index, direction } = this.state;
 
     const handleSelect = (selectedIndex, e) => {
@@ -67,14 +67,18 @@ class CarouselContainer extends Component {
       return (
         <Carousel.Item key={id}>
           <section className={'customFeel'} key={id}>
-            <CarouselSections key={id} sectionItems={sectionItems} />
+            <CarouselSections
+              key={id}
+              theme={theme}
+              sectionItems={sectionItems}
+            />
           </section>
         </Carousel.Item>
       );
     });
 
     return (
-      <div className="carousel-container">
+      <div className="carousel-container mb-5 ">
         <div className="carousel-top-Label">
           <h1 className="carousel-label">
             {category} <span className="explore-all">> explore all</span>
@@ -99,7 +103,8 @@ class CarouselContainer extends Component {
 
 CarouselContainer.propTypes = {
   articles: PropTypes.array.isRequired,
-  category: PropTypes.string.isRequired
+  category: PropTypes.string.isRequired,
+  theme: PropTypes.string
 };
 
 export default CarouselContainer;
