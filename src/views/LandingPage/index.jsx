@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { themeToggler } from './index.action';
 import Toggle from '../../components/Toggle/index.jsx';
 import './LandingPage.scss';
-import ArticleCard from '../../components/ArticleCard/index.jsx';
+import articleCard from '../../components/ArticleCard/index.jsx';
+import axios from 'axios';
 
 export class LandingPage extends React.Component {
   constructor() {
@@ -17,7 +18,22 @@ export class LandingPage extends React.Component {
     this.app_theme = localStorage.getItem('app_theme');
   }
 
-  componentWillMount() {
+  async fetchArticles() {
+    const res = await axios.get(
+      'http://persephone-backend-staging.herokuapp.com/api/v1/articles',
+      {
+        // header: {
+        //   Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjIsImVtYWlsIjoibGVlbWFyQG1haWwuY29tIiwicm9sZVR5cGUiOiJhdXRob3IiLCJpYXQiOjE1NjUwNzA3MTUsImV4cCI6MTU2NTExMzkxNX0.vHTpfegGpuK9bpACxEh7CiuWnF1eI-UGseGepJl6FHY'
+        // }
+      }
+    );
+    console.log(res.data.data.allArticles);
+    //    articles = res.data.data.allArticles;
+    //this.setState({articleDetails:res.data.data.allArticles});
+    //console.log(this.state.articleDetails.description);
+  }
+  async componentDidMount() {
+    //articles = await axios.get('http://persephone-backend-staging.herokuapp.com/api/v1/articles');
     // dispatch an action
     this.props.themeToggler(this.app_theme);
     document.body.classList.toggle(this.app_theme);
@@ -36,18 +52,31 @@ export class LandingPage extends React.Component {
     // store user preference
     localStorage.setItem('app_theme', this.state.theme);
   }
+
+  // generateArticleCards () {
+  //   console.log(articles);
+  //   return (
+  //     articles ? articles.data.data.allArticles.map(article => {
+  //       <articleCard
+  //         articleImage={article.image}
+  //         light={this.state.theme}
+  //         articleTitle={article.articleTitle}
+  //         authorImage={article.author.image}
+  //         author={`${article.author.firstName} ${article.author.lastName}`}
+  //         email={article.author.email}
+  //         readTime={article.readTime}
+  //       />
+  //     })
+  //     : <h1>No articles on this page</h1>
+  //   )
+  // }
   render() {
-    const articleDetails = {
-      articleImage: '../../src/assets/images/profileImage.jpg',
-      light: true,
-      articleTitle: 'Understanding React and redux',
-      authorImage: '../../src/assets/images/react.png',
-      author: 'Damilola Adekoya',
-      email: 'damilola.adekoya@andela.com',
-      readTime: '6 mins'
-    };
     const { toggle } = this.state;
     const { theme } = this.props.theme;
+    const articles = async () =>
+      await axios.get(
+        'http://persephone-backend-staging.herokuapp.com/api/v1/articles'
+      );
     return (
       <div className={`${theme} landingPage`}>
         <div className="App">
@@ -56,7 +85,18 @@ export class LandingPage extends React.Component {
         </div>
         <h1>This is a demo Landing page</h1>
         <Toggle classToggle={toggle} handleClick={this.handleClick} />
-        <ArticleCard {...articleDetails} />
+        {articles.data &&
+          articles.data.data.allArticles.map(article => {
+            <articleCard
+              articleImage={article.image}
+              light={this.state.theme}
+              articleTitle={article.articleTitle}
+              authorImage={article.author.image}
+              author={`${article.author.firstName} ${article.author.lastName}`}
+              email={article.author.email}
+              readTime={article.readTime}
+            />;
+          })}
       </div>
     );
   }

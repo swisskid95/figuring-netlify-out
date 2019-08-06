@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import LandingPage from './views/LandingPage/index.jsx';
 import LoginPage from './views/LoginPage/index.jsx';
 import ArticlePage from './views/ArticlePage/index.jsx';
@@ -18,6 +19,7 @@ const store = setupStore();
 const app_theme = localStorage.getItem('app_theme');
 class App extends Component {
   state = {
+    articleDetails: [],
     show: false,
     lightTheme: true
   };
@@ -35,8 +37,17 @@ class App extends Component {
             <Route path="/login" component={LoginPage} />
             <Route path="/article" component={ArticlePage} />
           </Switch>
+
           <Footer app_theme={app_theme} />
-          <button type="button" onClick={this.handleShow}>
+          {/* console.log(this);
+          articles: {this.state.articleDetails[0]} */}
+          <button
+            type="button"
+            onClick={() => {
+              this.handleShow();
+              this.onSearchSubmit();
+            }}
+          >
             Open modal
           </button>
           <Modal
