@@ -6,8 +6,8 @@
   box-shadow: 0px 0px 26px rgba(0, 0, 0, 0.3);
 
   .card-img-top {
-    width: 320px;
-    height: 182px;
+    max-width: 100%;
+    max-height: 182px;
     border-radius: 4px 4px 0px 0px;
   }
 
@@ -40,13 +40,13 @@
     justify-content: space-between;
   }
 
-  .avatar p {
+  .avatar span {
     font-size: 10px;
     margin-top: 7px;
     line-height: 12px;
   }
 
-  .avatar p small {
+  .avatar span small {
     font-weight: 300;
     font-size: 6px;
     line-height: 7px;
@@ -64,6 +64,10 @@
 .dark-theme {
   color: white;
   background: rgba(22, 22, 22, 0.89);
+
+  .avatar span small {
+    color: #c4c4c4;
+  }
 }
 
 .light-theme {
