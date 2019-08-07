@@ -5,7 +5,6 @@ import Button from '../../components/Button/index.jsx';
 
 import './FollowersTablist.scss';
 
-
 /**
  *  Sample Usage
  *  const props = {
@@ -40,11 +39,9 @@ const followersTablist = props => {
           </h5>
         </div>
         <div>
-          <Button
-            customClassName={customClassName}
-            buttonText={buttonText}
-            isInverse={isIn}
-          />
+          <Button customClassName={customClassName} isInverse={isIn}>
+            {buttonText}
+          </Button>
         </div>
       </div>
     </TablistContainer>

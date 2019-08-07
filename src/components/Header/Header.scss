@@ -1,10 +1,12 @@
 .nav-shadow {
-  background: #ffffff;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.04);
 }
 
 .navbar {
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1rem;
+  &.dark-theme a {
+    color: #ffffff;
+  }
 }
 .navbar-logo a {
   text-decoration: none;
@@ -15,6 +17,6 @@
     cursor: pointer;
   }
 }
-button {
-  line-height: 22px;
+.display-flex {
+  display: flex;
 }
