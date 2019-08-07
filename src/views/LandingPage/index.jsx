@@ -5,6 +5,21 @@ import { themeToggler } from './index.action';
 import Toggle from '../../components/Toggle/index.jsx';
 import './LandingPage.scss';
 import ArticleCard from '../../components/ArticleCard/index.jsx';
+import FollowersTablist from '../../components/FollowersTablist/index.jsx';
+
+const followingCard = {
+  lightTheme: false,
+  isFollowing: true,
+  email: 'damilola.adekoya@andela.com',
+  name: 'Damilola Adekoya'
+};
+
+const notFollowingCard = {
+  lightTheme: true,
+  isFollowing: false,
+  email: 'damilola.adekoya@andela.com',
+  name: 'Damilola Adekoya'
+};
 
 export class LandingPage extends React.Component {
   constructor() {
@@ -57,6 +72,12 @@ export class LandingPage extends React.Component {
         <h1>This is a demo Landing page</h1>
         <Toggle classToggle={toggle} handleClick={this.handleClick} />
         <ArticleCard {...articleDetails} />
+        <br />
+        <br />
+        <FollowersTablist {...followingCard} />
+        <br />
+        <br />
+        <FollowersTablist {...notFollowingCard} />
       </div>
     );
   }
