@@ -156,7 +156,6 @@ export class SignupPage extends Component {
             <IconComponent
               src={'./../src/assets/images/authhero.svg'}
               alt={'image asset'}
-              className="hero"
             />
             <h5 className={this.props.lightTheme ? '' : 'light-signup-hero'}>
               Have an account already?{' '}
@@ -273,7 +272,6 @@ export class SignupPage extends Component {
                 <IconComponent
                   src={'../../src/assets/images/twitter-signup.svg'}
                   alt={'twitter asset'}
-                  className="hero"
                 />
                 <h5>Sign In With Twitter</h5>
               </Button>
@@ -281,7 +279,6 @@ export class SignupPage extends Component {
                 <IconComponent
                   src={'../../src/assets/images/facebook-signup.svg'}
                   alt={'facebook asset'}
-                  className="hero"
                 />
                 <h5>Sign In With Facebook</h5>
               </Button>
@@ -289,7 +286,6 @@ export class SignupPage extends Component {
                 <IconComponent
                   src={'../../src/assets/images/google-signup.svg'}
                   alt={'twitter asset'}
-                  className="hero"
                 />{' '}
                 <h5>Sign In With Google</h5>
               </Button>
