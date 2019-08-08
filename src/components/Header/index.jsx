@@ -21,7 +21,9 @@ export class Header extends Component {
   componentWillMount() {
     // dispatch an action
     this.props.themeToggler(this.app_theme);
-    document.body.classList.toggle(this.app_theme);
+    document.body.classList.toggle(
+      this.app_theme 
+    );
     // update state
     this.app_theme === 'light-theme'
       ? this.setState({ toggle: '', theme: 'dark-theme' })
@@ -29,7 +31,7 @@ export class Header extends Component {
   }
 
   handleClick() {
-    document.body.classList.toggle('light-theme');
+    document.body.classList.toggle('dark-theme');
     this.state.toggle === 'switch'
       ? this.setState({ toggle: '', theme: 'dark-theme' })
       : this.setState({ toggle: 'switch', theme: 'light-theme' });
@@ -100,14 +102,14 @@ export class Header extends Component {
 
                 <Link
                   to="/signup"
-                  className="button  navbtn_signup button-normal border-0 pr-3 pl-3  pb-1 mr-4"
+                  className="button  navbtn_signup button-normal border-0 pr-3 pl-3 mr-4"
                 >
                   Sign Up
                 </Link>
 
                 <Link
                   to="/login"
-                  className="button  navbtn_login button-inverse pr-3 pl-3   pb-1  mr-4"
+                  className="button  navbtn_login button-inverse pr-3 pl-3  mr-4"
                 >
                   Login
                 </Link>
